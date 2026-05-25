@@ -9,8 +9,8 @@ const words = ["One API.", "Every AI Model.", "Built for Founders."];
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center hero-glow grid-pattern overflow-hidden pt-16">
-      {/* Subtle center glow orb */}
-      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#c9922a]/6 blur-[100px] pointer-events-none" />
+      {/* Glow orbs */}
+      <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full bg-[#c9922a]/5 blur-[120px] pointer-events-none" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] rounded-full bg-[#4bb8d4]/4 blur-[80px] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -40,7 +40,7 @@ export default function Hero() {
                 className={`text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight leading-tight ${
                   i === 2
                     ? "text-[#c9922a] glow-gold-text"
-                    : "text-[#f5f5f5]"
+                    : "text-[#1a1a1a]"
                 }`}
               >
                 {word}
@@ -54,7 +54,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.58 }}
-          className="text-lg sm:text-xl text-[#888] max-w-2xl mx-auto leading-relaxed mb-10"
+          className="text-lg sm:text-xl text-[#666] max-w-2xl mx-auto leading-relaxed mb-10"
         >
           BFC AI Gateway gives you unified access to 80+ frontier AI models —
           at startup-friendly rates, backed by the network only BFC can offer.
@@ -72,7 +72,7 @@ export default function Hero() {
             href={config.docsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[#666] hover:text-[#c9922a] transition-colors underline underline-offset-4"
+            className="text-sm text-[#888] hover:text-[#c9922a] transition-colors underline underline-offset-4"
           >
             View Documentation
           </a>
@@ -85,11 +85,11 @@ export default function Hero() {
           transition={{ delay: 1.4, duration: 0.8 }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
         >
-          <span className="text-xs text-[#444] tracking-widest uppercase">Scroll</span>
+          <span className="text-xs text-[#bbb] tracking-widest uppercase">Scroll</span>
           <motion.div
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
-            className="w-px h-8 bg-gradient-to-b from-[#c9922a]/60 to-transparent"
+            className="w-px h-8 bg-gradient-to-b from-[#c9922a]/50 to-transparent"
           />
         </motion.div>
       </div>

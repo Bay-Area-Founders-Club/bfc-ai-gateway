@@ -22,7 +22,7 @@ export default function Navbar() {
       transition={{ duration: 0.5, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#0a0a0a]/90 backdrop-blur-md border-b border-[#1e1e1e]"
+          ? "bg-[#f9f7f4]/90 backdrop-blur-md border-b border-[#e8e2d9] shadow-sm"
           : "bg-transparent"
       }`}
     >
@@ -40,10 +40,10 @@ export default function Navbar() {
             className="h-7 w-auto"
             priority
           />
-          <span className="hidden sm:block text-[#444] text-xs font-medium tracking-widest uppercase pt-0.5">
+          <span className="hidden sm:block text-[#ccc] text-xs font-medium tracking-widest uppercase pt-0.5">
             |
           </span>
-          <span className="hidden sm:block text-[#888] text-xs font-semibold tracking-widest uppercase">
+          <span className="hidden sm:block text-[#aaa] text-xs font-semibold tracking-widest uppercase">
             AI Gateway
           </span>
         </a>
@@ -52,19 +52,19 @@ export default function Navbar() {
         <nav className="hidden md:flex items-center gap-8">
           <a
             href="#features"
-            className="text-sm text-[#888] hover:text-[#f5f5f5] transition-colors"
+            className="text-sm text-[#666] hover:text-[#1a1a1a] transition-colors"
           >
             Features
           </a>
           <a
             href="#models"
-            className="text-sm text-[#888] hover:text-[#f5f5f5] transition-colors"
+            className="text-sm text-[#666] hover:text-[#1a1a1a] transition-colors"
           >
             Models
           </a>
           <a
             href="#advantage"
-            className="text-sm text-[#888] hover:text-[#f5f5f5] transition-colors"
+            className="text-sm text-[#666] hover:text-[#1a1a1a] transition-colors"
           >
             BFC Advantage
           </a>
@@ -72,7 +72,7 @@ export default function Navbar() {
             href={config.docsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-[#888] hover:text-[#f5f5f5] transition-colors"
+            className="text-sm text-[#666] hover:text-[#1a1a1a] transition-colors"
           >
             Docs
           </a>

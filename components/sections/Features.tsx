@@ -33,17 +33,17 @@ const icons: Record<string, React.ReactNode> = {
 
 export default function Features() {
   return (
-    <section id="features" className="py-24 bg-[#0a0a0a]">
+    <section id="features" className="py-24 bg-[#f9f7f4]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section header */}
         <AnimatedSection className="text-center mb-16">
           <p className="text-xs font-semibold text-[#c9922a] tracking-widest uppercase mb-3">
             Platform
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#f5f5f5] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4">
             Everything you need, nothing you don&apos;t
           </h2>
-          <p className="text-[#666] max-w-xl mx-auto">
+          <p className="text-[#777] max-w-xl mx-auto">
             A focused set of capabilities designed for teams that move fast and
             need their AI infrastructure to keep up.
           </p>
@@ -53,11 +53,11 @@ export default function Features() {
         <div className="grid sm:grid-cols-2 gap-5">
           {config.features.map((feature, i) => (
             <AnimatedSection key={feature.title} delay={i * 0.1}>
-              <div className="gradient-border p-7 h-full group hover:bg-[#1a1a1a] transition-colors duration-300">
+              <div className="gradient-border p-7 h-full group hover:shadow-md transition-all duration-300 shadow-sm">
                 <div className="w-11 h-11 rounded-xl bg-[#c9922a]/10 border border-[#c9922a]/20 flex items-center justify-center mb-5 group-hover:bg-[#c9922a]/15 group-hover:border-[#c9922a]/35 transition-all duration-300">
                   {icons[feature.icon]}
                 </div>
-                <h3 className="text-lg font-semibold text-[#f0f0f0] mb-2">
+                <h3 className="text-lg font-semibold text-[#1a1a1a] mb-2">
                   {feature.title}
                 </h3>
                 <p className="text-[#777] leading-relaxed text-sm">

@@ -1,13 +1,13 @@
 export const config = {
   platformUrl: "https://placeholder.bfc-gateway.com",
-  docsUrl: "https://docs.bfc-gateway.com",
+  docsUrl: "https://doc.imarouter.com/#en",
   bfcMainSite: "https://www.bayareafoundersclub.com",
   contactEmail: "gateway@bayareafoundersclub.com",
   stats: [
     { value: "80+", label: "AI Models" },
     { value: "40%", label: "Cost Reduction" },
     { value: "99.9%", label: "Uptime SLA" },
-    { value: "5,000+", label: "BFC Founders" },
+    { value: "100,000+", label: "BFC Founders" },
   ],
   features: [
     {

@@ -9,7 +9,7 @@ import CallToAction from "@/components/sections/CallToAction";
 
 export default function Home() {
   return (
-    <div className="bg-[#0a0a0a] min-h-screen">
+    <div className="bg-[#f9f7f4] min-h-screen">
       <Navbar />
       <main>
         <Hero />
