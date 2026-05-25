@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "BFC AI Gateway — One API for Every Frontier Model",
   description:
     "Unified access to 80+ frontier AI models at startup-friendly rates. Built by Bay Area Founders Club for founders who shape markets.",
+  icons: {
+    icon: "/bfc_logo_c.png",
+    apple: "/BFC_Logo.jpg",
+  },
   openGraph: {
     title: "BFC AI Gateway",
     description:
