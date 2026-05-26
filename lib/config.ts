@@ -1,5 +1,5 @@
 export const config = {
-  platformUrl: "https://placeholder.bfc-gateway.com",
+  platformUrl: "https://dashboard.bafc.io",
   docsUrl: "https://doc.imarouter.com/#en",
   bfcMainSite: "https://www.bayareafoundersclub.com",
   contactEmail: "gateway@bayareafoundersclub.com",
