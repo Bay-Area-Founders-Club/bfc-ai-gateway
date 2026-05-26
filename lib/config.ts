@@ -1,5 +1,6 @@
 export const config = {
   platformUrl: "https://dashboard.bafc.io",
+  pricingUrl: "https://dashboard.bafc.io/pricing",
   docsUrl: "https://doc.bafc.io/#en",
   bfcMainSite: "https://www.bayareafoundersclub.com",
   contactEmail: "contact@bayareafoundersclub.com",

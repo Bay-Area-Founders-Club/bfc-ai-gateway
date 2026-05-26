@@ -57,7 +57,9 @@ export default function Navbar() {
             Features
           </a>
           <a
-            href="#models"
+            href={config.pricingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-sm text-[#666] hover:text-[#1a1a1a] transition-colors"
           >
             Models
