@@ -2,7 +2,7 @@ export const config = {
   platformUrl: "https://dashboard.bafc.io",
   docsUrl: "https://doc.bafc.io/#en",
   bfcMainSite: "https://www.bayareafoundersclub.com",
-  contactEmail: "paul@bayareafoundersclub.com",
+  contactEmail: "contact@bayareafoundersclub.com",
   stats: [
     { value: "90+", label: "AI Models" },
     { value: "40%", label: "Cost Reduction" },
