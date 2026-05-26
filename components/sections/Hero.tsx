@@ -48,22 +48,6 @@ export default function Hero() {
 
             {/* LEFT: Text */}
             <div className="flex flex-col items-start">
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="inline-flex items-center gap-2 border border-[#c9922a]/30 bg-white/60 rounded-full px-4 py-1.5 mb-7"
-              >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <circle cx="7" cy="7" r="6" stroke="#c9922a" strokeWidth="1.2" />
-                  <path d="M7 4v3l2 1.5" stroke="#c9922a" strokeWidth="1.2" strokeLinecap="round" />
-                </svg>
-                <span className="text-[11px] font-semibold text-[#c9922a] tracking-wider uppercase">
-                  A Bay Area Founders Club Product
-                </span>
-              </motion.div>
-
               {/* Headline */}
               <div className="mb-5">
                 {["One API.", "Every AI Model."].map((word, i) => (
