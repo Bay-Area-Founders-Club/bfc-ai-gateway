@@ -111,7 +111,7 @@ export default function Hero() {
                       {f.icon}
                     </div>
                     <div>
-                      <div className="text-[12px] font-semibold text-[#1a1a1a] leading-tight">{f.title}</div>
+                      <div className="text-[12px] font-semibold text-[#1a1a1a] leading-tight whitespace-nowrap">{f.title}</div>
                       <div className="text-[11px] text-[#999] mt-0.5 whitespace-nowrap">{f.sub}</div>
                     </div>
                   </div>
