@@ -113,7 +113,7 @@ const dots = [
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex flex-col hero-glow grid-pattern overflow-hidden pt-16">
+    <section className="relative min-h-screen flex flex-col hero-glow overflow-hidden pt-16">
       <div className="flex-1 flex flex-col">
         {/* Main content */}
         <div className="flex-1 max-w-6xl mx-auto w-full px-6 flex items-center">
