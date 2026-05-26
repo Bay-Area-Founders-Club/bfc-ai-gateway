@@ -370,35 +370,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Bottom stats bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.85 }}
-          className="border-t border-[#e8e2d9] bg-white/60 backdrop-blur-sm"
-        >
-          <div className="max-w-6xl mx-auto px-6">
-            <div className="flex items-center justify-center gap-0 divide-x divide-[#e8e2d9]">
-              {[
-                { icon: "M3 7h6M3 11h6M13 5l2 2-2 2M13 9l2 2-2 2", label: "AI Models", value: "90+" },
-                { icon: "M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm8 5a8 8 0 0 0-16 0", label: "Founders", value: "10,000+" },
-                { icon: "M13 2L3 14h9l-1 8 10-12h-9l1-8z", label: "Uptime", value: "99.9%" },
-              ].map((s) => (
-                <div key={s.label} className="flex items-center gap-3 px-10 py-4">
-                  <div className="w-8 h-8 rounded-lg bg-[#c9922a]/10 flex items-center justify-center shrink-0">
-                    <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
-                      <path d={s.icon} stroke="#c9922a" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="text-lg font-bold text-[#1a1a1a] leading-none">{s.value}</div>
-                    <div className="text-xs text-[#999] mt-0.5">{s.label}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
