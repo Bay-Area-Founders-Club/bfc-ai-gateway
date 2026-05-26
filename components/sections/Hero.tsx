@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { GetStartedButton } from "@/components/ui/Button";
 import { config } from "@/lib/config";
 
-const words = ["One API.", "Every AI Model.", "Smart Open Router."];
+const words = ["One API.", "Every AI Model.", "Smart OpenRouter."];
 
 export default function Hero() {
   return (
