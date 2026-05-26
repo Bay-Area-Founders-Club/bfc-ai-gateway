@@ -76,6 +76,20 @@ body {
   background-size: 60px 60px;
 }
 
+/* Orbit animations */
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes counter-orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg); }
+}
+
+.orbit-ring  { animation: orbit-rotate  24s linear infinite; }
+.orbit-card  { animation: counter-orbit 24s linear infinite; }
+
 /* Marquee animation */
 @keyframes marquee {
   0% { transform: translateX(0); }

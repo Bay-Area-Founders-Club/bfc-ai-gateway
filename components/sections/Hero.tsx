@@ -220,150 +220,119 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="relative h-[500px] hidden lg:flex items-center justify-center"
             >
+              {/* ── Orbit ring (rotates, 440×440, centered) ── */}
+              <div
+                className="orbit-ring absolute z-20"
+                style={{ width: 440, height: 440, top: "50%", left: "50%", marginTop: -220, marginLeft: -220 }}
+              >
+                {/* Card positions: 5 providers evenly at 72° intervals, r=195px from center(220,220) */}
+                {/* Angles: -90°, -18°, 54°, 126°, 198° */}
+
+                {/* OpenAI — top (-90°): x=220, y=25 */}
+                <div style={{ position: "absolute", left: 220, top: 25 }}>
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 86, height: 78 }}>
+                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                      <circle cx="19" cy="19" r="17" stroke="#111" strokeWidth="1.6" fill="none"/>
+                      <path d="M19 5v28M5 19h28M8.4 8.4l21.2 21.2M29.6 8.4L8.4 29.6" stroke="#111" strokeWidth="1.8" strokeLinecap="round"/>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Anthropic — upper-right (-18°): x=405, y=159 */}
+                <div style={{ position: "absolute", left: 405, top: 159 }}>
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 82, height: 74 }}>
+                    <span className="text-[21px] font-black text-[#1a1a1a]" style={{ fontFamily: "Georgia, serif", letterSpacing: "-1px" }}>AI\</span>
+                  </div>
+                </div>
+
+                {/* Mistral — lower-right (54°): x=335, y=378 */}
+                <div style={{ position: "absolute", left: 335, top: 378 }}>
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center gap-3 px-4" style={{ width: 150, height: 70 }}>
+                    <div className="grid grid-cols-2 gap-[3px] shrink-0">
+                      <div style={{ width: 11, height: 11, background: "#FF7000" }} />
+                      <div style={{ width: 11, height: 11, background: "#1a1a1a" }} />
+                      <div style={{ width: 11, height: 11, background: "#1a1a1a" }} />
+                      <div style={{ width: 11, height: 11, background: "#FF7000" }} />
+                    </div>
+                    <div className="leading-tight">
+                      <div className="text-[12px] font-bold text-[#1a1a1a] tracking-wide">MISTRAL</div>
+                      <div className="text-[12px] font-bold text-[#1a1a1a] tracking-wide">AI_</div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Google — lower-left (126°): x=105, y=378 */}
+                <div style={{ position: "absolute", left: 105, top: 378 }}>
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 84, height: 78 }}>
+                    <svg width="38" height="38" viewBox="0 0 40 40" fill="none">
+                      <path d="M38 20.4c0-1.3-.1-2.5-.3-3.7H20v7.1h10.1c-.4 2.2-1.8 4-3.8 5.3v4.4h6.1C35.6 30.2 38 25.7 38 20.4z" fill="#4285F4"/>
+                      <path d="M20 39c5.1 0 9.4-1.7 12.5-4.5l-6.1-4.4c-1.7 1.1-3.8 1.8-6.4 1.8-4.9 0-9-3.3-10.5-7.7H3.3v4.5C6.4 34.9 12.7 39 20 39z" fill="#34A853"/>
+                      <path d="M9.5 24.2c-.4-1.1-.6-2.2-.6-3.4s.2-2.3.6-3.4v-4.5H3.3A18.7 18.7 0 0 0 1 20c0 3 .7 5.9 2.3 8.4l6.2-4.2z" fill="#FBBC05"/>
+                      <path d="M20 9c2.7 0 5.1.9 7 2.7l5.2-5.2C28.9 3.5 24.8 2 20 2 12.7 2 6.4 6.1 3.3 12.1l6.2 4.5C11 12.3 15.1 9 20 9z" fill="#EA4335"/>
+                    </svg>
+                  </div>
+                </div>
+
+                {/* Meta — upper-left (198°): x=35, y=159 */}
+                <div style={{ position: "absolute", left: 35, top: 159 }}>
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 88, height: 80 }}>
+                    <svg width="46" height="26" viewBox="0 0 46 26" fill="none">
+                      <path d="M3 23C3 18 5.5 11 9 8.5c2.5-1.8 4.5 0 6.5 3.5l5-9.5c2-3 5-3 7 0L43 23" stroke="#0082FB" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
               {/* ── Gold dot ── */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.9 }}
-                className="absolute w-3 h-3 rounded-full bg-[#c9922a] z-20"
-                style={{ top: "22%", left: "28%" }}
-              />
+              <div className="absolute w-3 h-3 rounded-full bg-[#c9922a] z-10" style={{ top: "18%", left: "26%" }} />
 
               {/* ── Blue 4-point star ── */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.0, duration: 0.4 }}
-                className="absolute z-20"
-                style={{ top: "48%", left: "16%" }}
-              >
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                  <path d="M18 1 L20.5 15.5 L35 18 L20.5 20.5 L18 35 L15.5 20.5 L1 18 L15.5 15.5 Z" fill="#4BB8D4" />
+              <div className="absolute z-10" style={{ top: "47%", left: "13%" }}>
+                <svg width="34" height="34" viewBox="0 0 34 34" fill="none">
+                  <path d="M17 1L19.3 14.7L33 17L19.3 19.3L17 33L14.7 19.3L1 17L14.7 14.7Z" fill="#4BB8D4"/>
                 </svg>
-              </motion.div>
+              </div>
 
-              {/* ── OpenAI card (top center-right) ── */}
+              {/* ── 3D Platform (centered, does NOT rotate) ── */}
               <motion.div
-                initial={{ opacity: 0, y: -12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.55, duration: 0.5 }}
-                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center z-20"
-                style={{ top: "4%", right: "22%", width: 88, height: 80 }}
-              >
-                {/* OpenAI asterisk logo */}
-                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
-                  <path d="M18 4v28M4 18h28M7.5 7.5l21 21M28.5 7.5l-21 21" stroke="#111" strokeWidth="2.2" strokeLinecap="round" />
-                  <circle cx="18" cy="18" r="16" stroke="#111" strokeWidth="1.5" fill="none" />
-                </svg>
-              </motion.div>
-
-              {/* ── Anthropic card (top right) ── */}
-              <motion.div
-                initial={{ opacity: 0, x: 12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.65, duration: 0.5 }}
-                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center z-20"
-                style={{ top: "10%", right: "0%", width: 84, height: 76 }}
-              >
-                <span className="text-[22px] font-black tracking-tight text-[#1a1a1a]" style={{ fontFamily: "serif" }}>AI\</span>
-              </motion.div>
-
-              {/* ── Left card: Claude/Mountain ── */}
-              <motion.div
-                initial={{ opacity: 0, x: -12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.6, duration: 0.5 }}
-                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center z-20"
-                style={{ top: "30%", left: "4%", width: 90, height: 82 }}
-              >
-                <svg width="44" height="30" viewBox="0 0 44 30" fill="none">
-                  <path d="M4 26 Q14 4 22 10 Q30 16 40 4" stroke="#4488FF" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-                  <path d="M4 26 L22 10 L40 4" stroke="#4488FF" strokeWidth="1" strokeLinecap="round" strokeDasharray="2 3" opacity="0.3" fill="none" />
-                </svg>
-              </motion.div>
-
-              {/* ── Mistral card (right middle) ── */}
-              <motion.div
-                initial={{ opacity: 0, x: 12 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.7, duration: 0.5 }}
-                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center gap-3 z-20 px-4"
-                style={{ top: "55%", right: "0%", width: 148, height: 72 }}
-              >
-                <div className="grid grid-cols-2 gap-[3px] shrink-0">
-                  <div className="w-[11px] h-[11px] bg-[#FF7000]" />
-                  <div className="w-[11px] h-[11px] bg-[#1a1a1a]" />
-                  <div className="w-[11px] h-[11px] bg-[#1a1a1a]" />
-                  <div className="w-[11px] h-[11px] bg-[#FF7000]" />
-                </div>
-                <div className="leading-tight">
-                  <div className="text-[13px] font-bold text-[#1a1a1a] tracking-wide">MISTRAL</div>
-                  <div className="text-[13px] font-bold text-[#1a1a1a] tracking-wide">AI_</div>
-                </div>
-              </motion.div>
-
-              {/* ── Google card (bottom right) ── */}
-              <motion.div
-                initial={{ opacity: 0, y: 12 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.75, duration: 0.5 }}
-                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center z-20"
-                style={{ bottom: "10%", right: "16%", width: 88, height: 82 }}
-              >
-                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
-                  <path d="M38 20.4c0-1.3-.1-2.5-.3-3.7H20v7.1h10.1c-.4 2.2-1.8 4-3.8 5.3v4.4h6.1C35.6 30.2 38 25.7 38 20.4z" fill="#4285F4"/>
-                  <path d="M20 39c5.1 0 9.4-1.7 12.5-4.5l-6.1-4.4c-1.7 1.1-3.8 1.8-6.4 1.8-4.9 0-9-3.3-10.5-7.7H3.3v4.5C6.4 34.9 12.7 39 20 39z" fill="#34A853"/>
-                  <path d="M9.5 24.2c-.4-1.1-.6-2.2-.6-3.4s.2-2.3.6-3.4v-4.5H3.3A18.7 18.7 0 0 0 1 20c0 3 .7 5.9 2.3 8.4l6.2-4.2z" fill="#FBBC05"/>
-                  <path d="M20 9c2.7 0 5.1.9 7 2.7l5.2-5.2C28.9 3.5 24.8 2 20 2 12.7 2 6.4 6.1 3.3 12.1l6.2 4.5C11 12.3 15.1 9 20 9z" fill="#EA4335"/>
-                </svg>
-              </motion.div>
-
-              {/* ── Flat stacked platform ── */}
-              <motion.div
-                initial={{ opacity: 0, y: 24 }}
+                initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.65, delay: 0.4 }}
                 className="relative z-10"
-                style={{ width: 260, height: 260 }}
+                style={{ perspective: "700px" }}
               >
-                {/* Layer 3 – deepest */}
-                <div
-                  className="absolute rounded-[32px] bg-[#dfc98a]"
-                  style={{ inset: 0, top: 24, left: 24, opacity: 0.55 }}
-                />
-                {/* Layer 2 – middle */}
-                <div
-                  className="absolute rounded-[32px] bg-[#f0dfa8]"
-                  style={{ inset: 0, top: 12, left: 12 }}
-                />
-                {/* Layer 1 – top card */}
-                <div
-                  className="absolute rounded-[32px] bg-gradient-to-br from-white to-[#fdf8f0] border border-[#e8d9b0]/60 shadow-xl flex items-center justify-center"
-                  style={{ inset: 0, top: 0, left: 0 }}
-                >
-                  {/* Bridge SVG */}
-                  <svg viewBox="0 0 120 90" fill="none" width="140" height="105">
-                    {/* Left tower */}
-                    <rect x="30" y="28" width="9" height="36" rx="3" fill="#b8832a" />
-                    <rect x="31.5" y="20" width="6" height="10" rx="2" fill="#c9922a" />
-                    {/* Right tower */}
-                    <rect x="81" y="28" width="9" height="36" rx="3" fill="#b8832a" />
-                    <rect x="82.5" y="20" width="6" height="10" rx="2" fill="#c9922a" />
-                    {/* Main arch cable */}
-                    <path d="M20 62 Q60 18 100 62" stroke="#c9922a" strokeWidth="3" fill="none" strokeLinecap="round" />
-                    {/* Suspender cables */}
-                    <line x1="38" y1="38" x2="38" y2="62" stroke="#c9922a" strokeWidth="1.5" />
-                    <line x1="50" y1="29" x2="50" y2="62" stroke="#c9922a" strokeWidth="1.5" />
-                    <line x1="70" y1="29" x2="70" y2="62" stroke="#c9922a" strokeWidth="1.5" />
-                    <line x1="82" y1="38" x2="82" y2="62" stroke="#c9922a" strokeWidth="1.5" />
-                    {/* Road deck */}
-                    <rect x="16" y="60" width="88" height="6" rx="3" fill="#c9922a" opacity="0.7" />
-                    {/* Water */}
-                    <rect x="14" y="68" width="92" height="12" rx="6" fill="#4BB8D4" opacity="0.85" />
-                    {/* Water shimmer */}
-                    <rect x="22" y="71" width="20" height="3" rx="1.5" fill="white" opacity="0.3" />
-                    <rect x="58" y="71" width="14" height="3" rx="1.5" fill="white" opacity="0.3" />
-                  </svg>
+                <div style={{ transform: "rotateX(18deg) rotateY(-16deg)", transformStyle: "preserve-3d", position: "relative", width: 240, height: 240 }}>
+                  {/* Layer 3 – deepest shadow */}
+                  <div className="absolute rounded-[30px]" style={{ inset: 0, top: 26, left: 26, background: "#d4b870", opacity: 0.45, transform: "translateZ(-20px)" }} />
+                  {/* Layer 2 – middle */}
+                  <div className="absolute rounded-[30px]" style={{ inset: 0, top: 13, left: 13, background: "linear-gradient(135deg, #f5e6b8, #ead5a0)", boxShadow: "0 4px 24px rgba(201,146,42,0.18)", transform: "translateZ(-10px)" }} />
+                  {/* Layer 1 – top card */}
+                  <div
+                    className="absolute rounded-[30px] flex items-center justify-center"
+                    style={{
+                      inset: 0, top: 0, left: 0,
+                      background: "linear-gradient(145deg, #ffffff 0%, #fdf8f0 60%, #f5e9d5 100%)",
+                      boxShadow: "0 0 0 1.5px rgba(201,146,42,0.35), 0 8px 32px rgba(201,146,42,0.12), 0 2px 8px rgba(0,0,0,0.06)",
+                      transform: "translateZ(0px)"
+                    }}
+                  >
+                    {/* Bridge SVG */}
+                    <svg viewBox="0 0 110 85" fill="none" width="130" height="100">
+                      <rect x="27" y="26" width="8" height="34" rx="3" fill="#b8832a"/>
+                      <rect x="28.5" y="18" width="5" height="10" rx="2" fill="#c9922a"/>
+                      <rect x="75" y="26" width="8" height="34" rx="3" fill="#b8832a"/>
+                      <rect x="76.5" y="18" width="5" height="10" rx="2" fill="#c9922a"/>
+                      <path d="M18 58 Q55 16 92 58" stroke="#c9922a" strokeWidth="2.8" fill="none" strokeLinecap="round"/>
+                      <line x1="34" y1="35" x2="34" y2="57" stroke="#c9922a" strokeWidth="1.4"/>
+                      <line x1="46" y1="26" x2="46" y2="57" stroke="#c9922a" strokeWidth="1.4"/>
+                      <line x1="64" y1="26" x2="64" y2="57" stroke="#c9922a" strokeWidth="1.4"/>
+                      <line x1="76" y1="35" x2="76" y2="57" stroke="#c9922a" strokeWidth="1.4"/>
+                      <rect x="14" y="56" width="82" height="5.5" rx="2.5" fill="#c9922a" opacity="0.75"/>
+                      <rect x="12" y="63" width="86" height="11" rx="5.5" fill="#4BB8D4" opacity="0.9"/>
+                      <rect x="20" y="66" width="18" height="3" rx="1.5" fill="white" opacity="0.35"/>
+                      <rect x="54" y="66" width="12" height="3" rx="1.5" fill="white" opacity="0.35"/>
+                    </svg>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>

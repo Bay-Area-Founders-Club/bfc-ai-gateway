@@ -2,21 +2,21 @@ import AnimatedSection from "@/components/ui/AnimatedSection";
 
 const providers = [
   { name: "OpenAI", description: "GPT-4o, o3, o4-mini" },
-  { name: "Anthropic", description: "Claude 4 Opus, Sonnet, Haiku" },
-  { name: "Google", description: "Gemini 2.5 Pro, Flash" },
-  { name: "Meta", description: "Llama 4 Scout, Maverick" },
-  { name: "Mistral", description: "Large, Codestral, Nemo" },
-  { name: "xAI", description: "Grok 3, Grok Vision" },
-  { name: "Cohere", description: "Command R+, Embed" },
-  { name: "Stability AI", description: "SD3, SDXL, Video" },
-  { name: "ByteDance", description: "Seedance, Doubao" },
-  { name: "Runway", description: "Gen-4 Video, Image" },
-  { name: "ElevenLabs", description: "Voice, TTS, STS" },
-  { name: "Perplexity", description: "Sonar Pro, Online" },
-  { name: "Together AI", description: "Open-source models" },
-  { name: "Fireworks", description: "Fast inference" },
-  { name: "DeepSeek", description: "R2, V3-0324" },
-  { name: "Qwen", description: "QwQ-32B, Qwen2.5" },
+  { name: "Anthropic", description: "Claude Opus 4, Sonnet 4.5, Haiku 4" },
+  { name: "Google", description: "Gemini 2.5 Pro, Flash 2.5" },
+  { name: "Meta", description: "Llama 4 Scout, Llama 4 Maverick" },
+  { name: "Mistral", description: "Mistral Large 3, Codestral 2" },
+  { name: "xAI", description: "Grok 3, Grok 3 Mini" },
+  { name: "DeepSeek", description: "DeepSeek R2, V3-0324" },
+  { name: "Qwen", description: "QwQ-32B, Qwen2.5-Max" },
+  { name: "ByteDance", description: "Seedance 2.0, Doubao-Pro" },
+  { name: "Runway", description: "Gen-4 Turbo, Gen-4 Image" },
+  { name: "ElevenLabs", description: "Turbo v2.5, Flash v2.5" },
+  { name: "Stability AI", description: "SD 3.5 Ultra, SDXL Turbo" },
+  { name: "Cohere", description: "Command R+, Embed v3" },
+  { name: "Perplexity", description: "Sonar Pro, Sonar Reasoning" },
+  { name: "Together AI", description: "70B+ open-source models" },
+  { name: "Fireworks AI", description: "FireFunction v2, fast LLMs" },
 ];
 
 const doubled = [...providers, ...providers];
@@ -41,7 +41,6 @@ export default function ModelGrid() {
 
       {/* Marquee strip */}
       <div className="relative">
-        {/* Fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#f2ede7] to-transparent pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#f2ede7] to-transparent pointer-events-none" />
 
@@ -50,7 +49,7 @@ export default function ModelGrid() {
             {doubled.map((provider, i) => (
               <div
                 key={`${provider.name}-${i}`}
-                className="flex-shrink-0 border border-[#e8e2d9] bg-white rounded-xl px-5 py-4 min-w-[160px] shadow-sm"
+                className="flex-shrink-0 border border-[#e8e2d9] bg-white rounded-xl px-5 py-4 min-w-[180px] shadow-sm"
               >
                 <div className="text-sm font-semibold text-[#1a1a1a] mb-0.5">
                   {provider.name}
@@ -64,7 +63,7 @@ export default function ModelGrid() {
 
       <div className="max-w-6xl mx-auto px-6 mt-10 text-center">
         <p className="text-xs text-[#bbb] tracking-wide">
-          New models added weekly &mdash; always up to date with the frontier.
+          New models added daily &mdash; always up to date with the frontier.
         </p>
       </div>
     </section>
