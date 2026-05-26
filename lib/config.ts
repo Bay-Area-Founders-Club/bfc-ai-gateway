@@ -7,7 +7,7 @@ export const config = {
     { value: "90+", label: "AI Models" },
     { value: "40%", label: "Cost Reduction" },
     { value: "99.9%", label: "Uptime SLA" },
-    { value: "5,000+", label: "Enterprise" },
+    { value: "5,000+", label: "Enterprises" },
   ],
   features: [
     {
