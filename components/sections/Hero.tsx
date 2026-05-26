@@ -56,7 +56,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.58 }}
           className="text-lg sm:text-xl text-[#666] max-w-2xl mx-auto leading-relaxed mb-10"
         >
-          BFC AI Gateway gives you unified access to 80+ frontier AI models —
+          BFC AI Gateway gives you unified access to 90+ frontier AI models —
           at startup-friendly rates, backed by the network only BFC can offer.
         </motion.p>
 
