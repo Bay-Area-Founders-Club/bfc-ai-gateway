@@ -68,9 +68,8 @@ export default function Features() {
               Platform
             </span>
           </div>
-          <h2 className="text-4xl sm:text-5xl font-bold text-[#1a1a1a] leading-tight mb-4">
-            All-in{" "}
-            <span className="text-[#c9922a] font-extrabold">One</span>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-[#c9922a] leading-tight mb-4">
+            All-in One
           </h2>
           <p className="text-[#888] max-w-xl mx-auto text-base">
             A focused set of capabilities designed for teams that move fast and
