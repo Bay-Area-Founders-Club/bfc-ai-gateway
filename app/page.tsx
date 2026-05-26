@@ -6,6 +6,7 @@ import Features from "@/components/sections/Features";
 import ModelGrid from "@/components/sections/ModelGrid";
 import BFCAdvantage from "@/components/sections/BFCAdvantage";
 import CallToAction from "@/components/sections/CallToAction";
+import TokenFactory from "@/components/sections/TokenFactory";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <TokenFactory />
         <Stats />
         <Features />
         <ModelGrid />
