@@ -27,7 +27,7 @@ const pillars = [
   },
   {
     title: "The right room",
-    body: "100,000+ founders, 5000+ Enterprises, 1,000+ VCs, 173 countries. When you build on BFC infrastructure, you're already in the room that shapes what's next.",
+    body: "100,000+ founders, 5000+ enterprises, 1,000+ VCs, 173 countries. When you build on BFC infrastructure, you're already in the room that shapes what's next.",
   },
   {
     title: "Speed and execution",
