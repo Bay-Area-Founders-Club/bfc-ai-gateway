@@ -228,43 +228,48 @@ export default function Hero() {
                 {/* Card positions: 5 providers evenly at 72° intervals, r=195px from center(220,220) */}
                 {/* Angles: -90°, -18°, 54°, 126°, 198° */}
 
-                {/* OpenAI — top (-90°): x=220, y=25 */}
+                {/* Anthropic "AI\" — top (-90°): x=220, y=25 */}
                 <div style={{ position: "absolute", left: 220, top: 25 }}>
-                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 86, height: 78 }}>
-                    <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-                      <circle cx="19" cy="19" r="17" stroke="#111" strokeWidth="1.6" fill="none"/>
-                      <path d="M19 5v28M5 19h28M8.4 8.4l21.2 21.2M29.6 8.4L8.4 29.6" stroke="#111" strokeWidth="1.8" strokeLinecap="round"/>
-                    </svg>
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 88, height: 80 }}>
+                    <span style={{ fontSize: 26, fontWeight: 900, color: "#1a1a1a", fontFamily: "Georgia, 'Times New Roman', serif", letterSpacing: "-1px" }}>AI\</span>
                   </div>
                 </div>
 
-                {/* Anthropic — upper-right (-18°): x=405, y=159 */}
+                {/* OpenAI wheel — upper-right (-18°): x=405, y=159 */}
                 <div style={{ position: "absolute", left: 405, top: 159 }}>
-                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 82, height: 74 }}>
-                    <span className="text-[21px] font-black text-[#1a1a1a]" style={{ fontFamily: "Georgia, serif", letterSpacing: "-1px" }}>AI\</span>
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 86, height: 78 }}>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                      <circle cx="20" cy="20" r="17" stroke="#111" strokeWidth="1.8" fill="none"/>
+                      {/* 8 spokes */}
+                      <line x1="20" y1="3" x2="20" y2="37" stroke="#111" strokeWidth="1.6" strokeLinecap="round"/>
+                      <line x1="3" y1="20" x2="37" y2="20" stroke="#111" strokeWidth="1.6" strokeLinecap="round"/>
+                      <line x1="7.97" y1="7.97" x2="32.03" y2="32.03" stroke="#111" strokeWidth="1.6" strokeLinecap="round"/>
+                      <line x1="32.03" y1="7.97" x2="7.97" y2="32.03" stroke="#111" strokeWidth="1.6" strokeLinecap="round"/>
+                      <circle cx="20" cy="20" r="3" fill="#111"/>
+                    </svg>
                   </div>
                 </div>
 
                 {/* Mistral — lower-right (54°): x=335, y=378 */}
                 <div style={{ position: "absolute", left: 335, top: 378 }}>
-                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center gap-3 px-4" style={{ width: 150, height: 70 }}>
-                    <div className="grid grid-cols-2 gap-[3px] shrink-0">
-                      <div style={{ width: 11, height: 11, background: "#FF7000" }} />
-                      <div style={{ width: 11, height: 11, background: "#1a1a1a" }} />
-                      <div style={{ width: 11, height: 11, background: "#1a1a1a" }} />
-                      <div style={{ width: 11, height: 11, background: "#FF7000" }} />
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center gap-3 px-4" style={{ width: 152, height: 72 }}>
+                    <div className="grid grid-cols-2 gap-[4px] shrink-0">
+                      <div style={{ width: 13, height: 13, background: "#FF7000" }} />
+                      <div style={{ width: 13, height: 13, background: "#1a1a1a" }} />
+                      <div style={{ width: 13, height: 13, background: "#1a1a1a" }} />
+                      <div style={{ width: 13, height: 13, background: "#FF7000" }} />
                     </div>
-                    <div className="leading-tight">
-                      <div className="text-[12px] font-bold text-[#1a1a1a] tracking-wide">MISTRAL</div>
-                      <div className="text-[12px] font-bold text-[#1a1a1a] tracking-wide">AI_</div>
+                    <div className="leading-snug">
+                      <div style={{ fontSize: 13, fontWeight: 700, color: "#1a1a1a", letterSpacing: "0.02em" }}>MISTRAL</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: "#1a1a1a", letterSpacing: "0.02em" }}>AI_</div>
                     </div>
                   </div>
                 </div>
 
-                {/* Google — lower-left (126°): x=105, y=378 */}
+                {/* Google G — lower-left (126°): x=105, y=378 */}
                 <div style={{ position: "absolute", left: 105, top: 378 }}>
-                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 84, height: 78 }}>
-                    <svg width="38" height="38" viewBox="0 0 40 40" fill="none">
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 86, height: 80 }}>
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
                       <path d="M38 20.4c0-1.3-.1-2.5-.3-3.7H20v7.1h10.1c-.4 2.2-1.8 4-3.8 5.3v4.4h6.1C35.6 30.2 38 25.7 38 20.4z" fill="#4285F4"/>
                       <path d="M20 39c5.1 0 9.4-1.7 12.5-4.5l-6.1-4.4c-1.7 1.1-3.8 1.8-6.4 1.8-4.9 0-9-3.3-10.5-7.7H3.3v4.5C6.4 34.9 12.7 39 20 39z" fill="#34A853"/>
                       <path d="M9.5 24.2c-.4-1.1-.6-2.2-.6-3.4s.2-2.3.6-3.4v-4.5H3.3A18.7 18.7 0 0 0 1 20c0 3 .7 5.9 2.3 8.4l6.2-4.2z" fill="#FBBC05"/>
@@ -273,11 +278,13 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Meta — upper-left (198°): x=35, y=159 */}
+                {/* Perplexity mountain — upper-left (198°): x=35, y=159 */}
                 <div style={{ position: "absolute", left: 35, top: 159 }}>
-                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 88, height: 80 }}>
-                    <svg width="46" height="26" viewBox="0 0 46 26" fill="none">
-                      <path d="M3 23C3 18 5.5 11 9 8.5c2.5-1.8 4.5 0 6.5 3.5l5-9.5c2-3 5-3 7 0L43 23" stroke="#0082FB" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round"/>
+                  <div className="orbit-card bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center" style={{ width: 90, height: 82 }}>
+                    <svg width="48" height="36" viewBox="0 0 48 36" fill="none">
+                      {/* Double mountain peaks */}
+                      <path d="M4 30 L18 8 L32 30" stroke="#3B82F6" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                      <path d="M22 30 L36 10 L50 30" stroke="#3B82F6" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
                     </svg>
                   </div>
                 </div>
