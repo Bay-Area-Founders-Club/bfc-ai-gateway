@@ -23,7 +23,7 @@ export default function Footer() {
               />
             </a>
             <p className="text-xs text-[#999] max-w-xs leading-relaxed">
-              The operating system for founders who shape markets.
+              The #1 AI-native startup community in Silicon Valley.
             </p>
           </div>
 
@@ -50,18 +50,6 @@ export default function Footer() {
               className="text-sm text-[#888] hover:text-[#c9922a] transition-colors"
             >
               BFC Main Site
-            </a>
-            <a
-              href="#"
-              className="text-sm text-[#888] hover:text-[#c9922a] transition-colors"
-            >
-              Privacy Policy
-            </a>
-            <a
-              href="#"
-              className="text-sm text-[#888] hover:text-[#c9922a] transition-colors"
-            >
-              Terms
             </a>
           </div>
         </div>
