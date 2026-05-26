@@ -213,104 +213,159 @@ export default function Hero() {
               </motion.div>
             </div>
 
-            {/* RIGHT: 3D Visual */}
+            {/* RIGHT: Visual */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="relative h-[480px] hidden lg:flex items-center justify-center"
+              className="relative h-[500px] hidden lg:flex items-center justify-center"
             >
-              {/* Floating provider chips */}
-              {providers.map((p) => (
-                <motion.div
-                  key={p.id}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.5 + p.delay }}
-                  className={`absolute ${p.pos} bg-white rounded-2xl shadow-md border border-[#ede9e0] px-4 py-3 flex items-center justify-center z-20`}
-                  style={{ minWidth: 64, minHeight: 56 }}
-                >
-                  {p.logo}
-                </motion.div>
-              ))}
-
-              {/* Decorative dots */}
-              {dots.map((d, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.8 + d.delay }}
-                  className={`absolute ${d.pos} ${d.size} rounded-full bg-[#c9922a] z-10`}
-                />
-              ))}
-
-              {/* Blue star */}
+              {/* ── Gold dot ── */}
               <motion.div
-                initial={{ opacity: 0, rotate: -20 }}
-                animate={{ opacity: 1, rotate: 0 }}
-                transition={{ delay: 0.9, duration: 0.5 }}
-                className="absolute top-[45%] left-[22%] z-20"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.9 }}
+                className="absolute w-3 h-3 rounded-full bg-[#c9922a] z-20"
+                style={{ top: "22%", left: "28%" }}
+              />
+
+              {/* ── Blue 4-point star ── */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.0, duration: 0.4 }}
+                className="absolute z-20"
+                style={{ top: "48%", left: "16%" }}
               >
-                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-                  <path d="M16 2l2.2 11.8L30 16l-11.8 2.2L16 30l-2.2-11.8L2 16l11.8-2.2L16 2z" fill="#4BB8D4" />
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <path d="M18 1 L20.5 15.5 L35 18 L20.5 20.5 L18 35 L15.5 20.5 L1 18 L15.5 15.5 Z" fill="#4BB8D4" />
                 </svg>
               </motion.div>
 
-              {/* 3D Platform */}
-              <div className="relative z-10" style={{ perspective: "800px" }}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.7, delay: 0.4 }}
-                  style={{ transform: "rotateX(18deg) rotateY(-8deg)" }}
-                  className="relative"
+              {/* ── OpenAI card (top center-right) ── */}
+              <motion.div
+                initial={{ opacity: 0, y: -12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.55, duration: 0.5 }}
+                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center z-20"
+                style={{ top: "4%", right: "22%", width: 88, height: 80 }}
+              >
+                {/* OpenAI asterisk logo */}
+                <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                  <path d="M18 4v28M4 18h28M7.5 7.5l21 21M28.5 7.5l-21 21" stroke="#111" strokeWidth="2.2" strokeLinecap="round" />
+                  <circle cx="18" cy="18" r="16" stroke="#111" strokeWidth="1.5" fill="none" />
+                </svg>
+              </motion.div>
+
+              {/* ── Anthropic card (top right) ── */}
+              <motion.div
+                initial={{ opacity: 0, x: 12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.65, duration: 0.5 }}
+                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center z-20"
+                style={{ top: "10%", right: "0%", width: 84, height: 76 }}
+              >
+                <span className="text-[22px] font-black tracking-tight text-[#1a1a1a]" style={{ fontFamily: "serif" }}>AI\</span>
+              </motion.div>
+
+              {/* ── Left card: Claude/Mountain ── */}
+              <motion.div
+                initial={{ opacity: 0, x: -12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.6, duration: 0.5 }}
+                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center z-20"
+                style={{ top: "30%", left: "4%", width: 90, height: 82 }}
+              >
+                <svg width="44" height="30" viewBox="0 0 44 30" fill="none">
+                  <path d="M4 26 Q14 4 22 10 Q30 16 40 4" stroke="#4488FF" strokeWidth="2.5" strokeLinecap="round" fill="none" />
+                  <path d="M4 26 L22 10 L40 4" stroke="#4488FF" strokeWidth="1" strokeLinecap="round" strokeDasharray="2 3" opacity="0.3" fill="none" />
+                </svg>
+              </motion.div>
+
+              {/* ── Mistral card (right middle) ── */}
+              <motion.div
+                initial={{ opacity: 0, x: 12 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.7, duration: 0.5 }}
+                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center gap-3 z-20 px-4"
+                style={{ top: "55%", right: "0%", width: 148, height: 72 }}
+              >
+                <div className="grid grid-cols-2 gap-[3px] shrink-0">
+                  <div className="w-[11px] h-[11px] bg-[#FF7000]" />
+                  <div className="w-[11px] h-[11px] bg-[#1a1a1a]" />
+                  <div className="w-[11px] h-[11px] bg-[#1a1a1a]" />
+                  <div className="w-[11px] h-[11px] bg-[#FF7000]" />
+                </div>
+                <div className="leading-tight">
+                  <div className="text-[13px] font-bold text-[#1a1a1a] tracking-wide">MISTRAL</div>
+                  <div className="text-[13px] font-bold text-[#1a1a1a] tracking-wide">AI_</div>
+                </div>
+              </motion.div>
+
+              {/* ── Google card (bottom right) ── */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.75, duration: 0.5 }}
+                className="absolute bg-white rounded-2xl shadow-lg border border-[#ede9e0] flex items-center justify-center z-20"
+                style={{ bottom: "10%", right: "16%", width: 88, height: 82 }}
+              >
+                <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                  <path d="M38 20.4c0-1.3-.1-2.5-.3-3.7H20v7.1h10.1c-.4 2.2-1.8 4-3.8 5.3v4.4h6.1C35.6 30.2 38 25.7 38 20.4z" fill="#4285F4"/>
+                  <path d="M20 39c5.1 0 9.4-1.7 12.5-4.5l-6.1-4.4c-1.7 1.1-3.8 1.8-6.4 1.8-4.9 0-9-3.3-10.5-7.7H3.3v4.5C6.4 34.9 12.7 39 20 39z" fill="#34A853"/>
+                  <path d="M9.5 24.2c-.4-1.1-.6-2.2-.6-3.4s.2-2.3.6-3.4v-4.5H3.3A18.7 18.7 0 0 0 1 20c0 3 .7 5.9 2.3 8.4l6.2-4.2z" fill="#FBBC05"/>
+                  <path d="M20 9c2.7 0 5.1.9 7 2.7l5.2-5.2C28.9 3.5 24.8 2 20 2 12.7 2 6.4 6.1 3.3 12.1l6.2 4.5C11 12.3 15.1 9 20 9z" fill="#EA4335"/>
+                </svg>
+              </motion.div>
+
+              {/* ── Flat stacked platform ── */}
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.65, delay: 0.4 }}
+                className="relative z-10"
+                style={{ width: 260, height: 260 }}
+              >
+                {/* Layer 3 – deepest */}
+                <div
+                  className="absolute rounded-[32px] bg-[#dfc98a]"
+                  style={{ inset: 0, top: 24, left: 24, opacity: 0.55 }}
+                />
+                {/* Layer 2 – middle */}
+                <div
+                  className="absolute rounded-[32px] bg-[#f0dfa8]"
+                  style={{ inset: 0, top: 12, left: 12 }}
+                />
+                {/* Layer 1 – top card */}
+                <div
+                  className="absolute rounded-[32px] bg-gradient-to-br from-white to-[#fdf8f0] border border-[#e8d9b0]/60 shadow-xl flex items-center justify-center"
+                  style={{ inset: 0, top: 0, left: 0 }}
                 >
-                  {/* Layer 3 – bottom shadow */}
-                  <div
-                    className="absolute rounded-[28px] bg-gradient-to-br from-[#f5e9c8] to-[#e8d4a0]"
-                    style={{ width: 220, height: 220, top: 48, left: 24, opacity: 0.5 }}
-                  />
-                  {/* Layer 2 – middle */}
-                  <div
-                    className="absolute rounded-[24px] bg-gradient-to-br from-[#fdf3dc] to-[#f0deb0] border border-[#e0c070]/40 shadow-lg"
-                    style={{ width: 210, height: 210, top: 24, left: 14 }}
-                  />
-                  {/* Layer 1 – top surface */}
-                  <div
-                    className="relative rounded-[22px] bg-gradient-to-br from-white via-[#fdf8f0] to-[#f5e9d0] border-2 border-[#c9922a]/25 shadow-xl flex items-center justify-center"
-                    style={{ width: 200, height: 200 }}
-                  >
-                    {/* Bridge icon on top */}
-                    <div className="flex items-center justify-center w-24 h-24">
-                      <svg viewBox="0 0 80 60" fill="none" width="96" height="72">
-                        {/* Water */}
-                        <rect x="4" y="46" width="72" height="8" rx="4" fill="url(#water)" opacity="0.7" />
-                        {/* Main cables */}
-                        <path d="M10 42 Q40 10 70 42" stroke="#c9922a" strokeWidth="2" fill="none" />
-                        {/* Left tower */}
-                        <rect x="20" y="18" width="5" height="26" rx="1.5" fill="#c9922a" />
-                        {/* Right tower */}
-                        <rect x="55" y="18" width="5" height="26" rx="1.5" fill="#c9922a" />
-                        {/* Vertical suspenders */}
-                        {[27, 34, 46, 53].map((x, i) => (
-                          <line key={i} x1={x} y1={30 + (i < 2 ? i * 2 : (3 - i) * 2)} x2={x} y2="44" stroke="#c9922a" strokeWidth="1.2" />
-                        ))}
-                        {/* Road */}
-                        <rect x="8" y="42" width="64" height="4" rx="2" fill="#e8c87a" opacity="0.6" />
-                        <defs>
-                          <linearGradient id="water" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#4BB8D4" />
-                            <stop offset="100%" stopColor="#2a9bb5" />
-                          </linearGradient>
-                        </defs>
-                      </svg>
-                    </div>
-                    {/* Subtle glow ring */}
-                    <div className="absolute inset-0 rounded-[22px] ring-1 ring-[#c9922a]/20" />
-                  </div>
-                </motion.div>
-              </div>
+                  {/* Bridge SVG */}
+                  <svg viewBox="0 0 120 90" fill="none" width="140" height="105">
+                    {/* Left tower */}
+                    <rect x="30" y="28" width="9" height="36" rx="3" fill="#b8832a" />
+                    <rect x="31.5" y="20" width="6" height="10" rx="2" fill="#c9922a" />
+                    {/* Right tower */}
+                    <rect x="81" y="28" width="9" height="36" rx="3" fill="#b8832a" />
+                    <rect x="82.5" y="20" width="6" height="10" rx="2" fill="#c9922a" />
+                    {/* Main arch cable */}
+                    <path d="M20 62 Q60 18 100 62" stroke="#c9922a" strokeWidth="3" fill="none" strokeLinecap="round" />
+                    {/* Suspender cables */}
+                    <line x1="38" y1="38" x2="38" y2="62" stroke="#c9922a" strokeWidth="1.5" />
+                    <line x1="50" y1="29" x2="50" y2="62" stroke="#c9922a" strokeWidth="1.5" />
+                    <line x1="70" y1="29" x2="70" y2="62" stroke="#c9922a" strokeWidth="1.5" />
+                    <line x1="82" y1="38" x2="82" y2="62" stroke="#c9922a" strokeWidth="1.5" />
+                    {/* Road deck */}
+                    <rect x="16" y="60" width="88" height="6" rx="3" fill="#c9922a" opacity="0.7" />
+                    {/* Water */}
+                    <rect x="14" y="68" width="92" height="12" rx="6" fill="#4BB8D4" opacity="0.85" />
+                    {/* Water shimmer */}
+                    <rect x="22" y="71" width="20" height="3" rx="1.5" fill="white" opacity="0.3" />
+                    <rect x="58" y="71" width="14" height="3" rx="1.5" fill="white" opacity="0.3" />
+                  </svg>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
