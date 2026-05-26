@@ -14,19 +14,6 @@ export default function Hero() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[200px] rounded-full bg-[#4bb8d4]/4 blur-[80px] pointer-events-none" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 12 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="inline-flex items-center gap-2 border border-[#c9922a]/30 bg-[#c9922a]/8 rounded-full px-4 py-1.5 mb-8"
-        >
-          <span className="w-1.5 h-1.5 rounded-full bg-[#c9922a] animate-pulse" />
-          <span className="text-xs font-medium text-[#c9922a] tracking-wider uppercase">
-            A Bay Area Founders Club Product
-          </span>
-        </motion.div>
-
         {/* Headline */}
         <div className="mb-6">
           {words.map((word, i) => (
