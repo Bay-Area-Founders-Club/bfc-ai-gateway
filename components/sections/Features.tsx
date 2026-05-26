@@ -1,68 +1,110 @@
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import { config } from "@/lib/config";
 
-const icons: Record<string, React.ReactNode> = {
-  gateway: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <rect x="2" y="7" width="6" height="10" rx="1.5" stroke="#c9922a" strokeWidth="1.5" />
-      <rect x="9" y="4" width="6" height="16" rx="1.5" stroke="#c9922a" strokeWidth="1.5" />
-      <rect x="16" y="7" width="6" height="10" rx="1.5" stroke="#c9922a" strokeWidth="1.5" />
-      <path d="M8 12h1M15 12h1" stroke="#c9922a" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-  routing: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M3 12h4l3-6 4 12 3-6h4" stroke="#c9922a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-  failover: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <path d="M12 2L12 6M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" stroke="#c9922a" strokeWidth="1.5" strokeLinecap="round" />
-      <circle cx="12" cy="12" r="3" stroke="#c9922a" strokeWidth="1.5" />
-    </svg>
-  ),
-  network: (
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="5" r="2.5" stroke="#c9922a" strokeWidth="1.5" />
-      <circle cx="5" cy="19" r="2.5" stroke="#c9922a" strokeWidth="1.5" />
-      <circle cx="19" cy="19" r="2.5" stroke="#c9922a" strokeWidth="1.5" />
-      <path d="M12 7.5v3L5 16.5M12 7.5v3L19 16.5" stroke="#c9922a" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
-  ),
-};
+const features = [
+  {
+    num: "01",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect x="2" y="10" width="8" height="14" rx="2" stroke="#c9922a" strokeWidth="1.8" />
+        <rect x="12" y="6" width="8" height="20" rx="2" stroke="#c9922a" strokeWidth="1.8" />
+        <rect x="22" y="10" width="8" height="14" rx="2" stroke="#c9922a" strokeWidth="1.8" />
+        <path d="M10 16h2M20 16h2" stroke="#c9922a" strokeWidth="1.8" strokeLinecap="round" />
+      </svg>
+    ),
+    title: "Unified API Gateway",
+    description:
+      "One endpoint for text, image, video, and audio. Every frontier model, zero integration overhead.",
+    tag: "SIMPLE. POWERFUL. UNIFIED.",
+  },
+  {
+    num: "02",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M4 16h4l4-8 5 16 4-8h7" stroke="#c9922a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: "Smart Cost Routing",
+    description:
+      "Automatically routes to the most cost-effective model that meets your quality bar — no manual tuning.",
+    tag: "SAVE MORE. WITHOUT SACRIFICING QUALITY.",
+  },
+  {
+    num: "03",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <path d="M16 3L4 8v9c0 6 5.3 11.6 12 13 6.7-1.4 12-7 12-13V8L16 3z" stroke="#c9922a" strokeWidth="1.8" strokeLinejoin="round" />
+        <path d="M10 16l4 4 8-8" stroke="#c9922a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: "Failover & Reliability",
+    description:
+      "If one provider goes down, we reroute instantly. Your product keeps running without interruption.",
+    tag: "BUILT FOR RELIABILITY. ALWAYS ON.",
+  },
+  {
+    num: "04",
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <circle cx="14" cy="11" r="5" stroke="#c9922a" strokeWidth="1.8" />
+        <path d="M6 28c0-4.4 3.6-8 8-8h1" stroke="#c9922a" strokeWidth="1.8" strokeLinecap="round" />
+        <path d="M22 20l1.5 3 3.5.5-2.5 2.4.6 3.5L22 27.8l-3.1 1.6.6-3.5L17 23.5l3.5-.5L22 20z" stroke="#c9922a" strokeWidth="1.5" strokeLinejoin="round" />
+      </svg>
+    ),
+    title: "BFC Member Credits",
+    description:
+      "BFC ecosystem members get exclusive credits, priority access, and startup pricing unavailable elsewhere.",
+    tag: "EXCLUSIVE BENEFITS. REAL ADVANTAGE.",
+  },
+];
 
 export default function Features() {
   return (
     <section id="features" className="py-24 bg-[#f9f7f4]">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section header */}
-        <AnimatedSection className="text-center mb-16">
-          <p className="text-xs font-semibold text-[#c9922a] tracking-widest uppercase mb-3">
-            Platform
-          </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#1a1a1a] mb-4">
-            Everything you need, nothing you don&apos;t
+        <AnimatedSection className="text-center mb-14">
+          <div className="inline-flex items-center border border-[#c9922a]/40 rounded-full px-5 py-1.5 mb-7">
+            <span className="text-xs font-semibold text-[#c9922a] tracking-widest uppercase">
+              Platform
+            </span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-bold text-[#1a1a1a] leading-tight mb-4">
+            All{" "}
+            <span className="text-[#c9922a]">in one</span>
           </h2>
-          <p className="text-[#777] max-w-xl mx-auto">
+          <p className="text-[#888] max-w-xl mx-auto text-base">
             A focused set of capabilities designed for teams that move fast and
             need their AI infrastructure to keep up.
           </p>
         </AnimatedSection>
 
-        {/* Feature grid */}
+        {/* Feature cards 2x2 */}
         <div className="grid sm:grid-cols-2 gap-5">
-          {config.features.map((feature, i) => (
-            <AnimatedSection key={feature.title} delay={i * 0.1}>
-              <div className="gradient-border p-7 h-full group hover:shadow-md transition-all duration-300 shadow-sm">
-                <div className="w-11 h-11 rounded-xl bg-[#c9922a]/10 border border-[#c9922a]/20 flex items-center justify-center mb-5 group-hover:bg-[#c9922a]/15 group-hover:border-[#c9922a]/35 transition-all duration-300">
-                  {icons[feature.icon]}
+          {features.map((f, i) => (
+            <AnimatedSection key={f.title} delay={i * 0.08}>
+              <div className="bg-white rounded-2xl border border-[#ede9e0] p-7 h-full flex gap-5 shadow-sm hover:shadow-md transition-shadow duration-300">
+                {/* Icon circle */}
+                <div className="shrink-0 w-16 h-16 rounded-full bg-[#c9922a]/10 flex items-center justify-center mt-1">
+                  {f.icon}
                 </div>
-                <h3 className="text-lg font-semibold text-[#1a1a1a] mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-[#777] leading-relaxed text-sm">
-                  {feature.description}
-                </p>
+
+                {/* Content */}
+                <div className="flex flex-col flex-1">
+                  {/* Number badge */}
+                  <div className="inline-flex items-center border border-[#c9922a]/35 rounded-lg px-2.5 py-0.5 w-fit mb-3">
+                    <span className="text-xs font-semibold text-[#c9922a]">{f.num}</span>
+                  </div>
+
+                  <h3 className="text-lg font-bold text-[#1a1a1a] mb-2">{f.title}</h3>
+                  <p className="text-sm text-[#777] leading-relaxed flex-1">{f.description}</p>
+
+                  {/* Tag */}
+                  <div className="mt-4 inline-flex items-center bg-[#fdf5e6] border border-[#e8d5a0] rounded-full px-3 py-1 w-fit">
+                    <span className="text-[10px] font-semibold text-[#c9922a] tracking-widest">
+                      {f.tag}
+                    </span>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
           ))}
