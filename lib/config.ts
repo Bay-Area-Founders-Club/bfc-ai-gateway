@@ -1,6 +1,6 @@
 export const config = {
   platformUrl: "https://dashboard.bafc.io",
-  docsUrl: "https://doc.imarouter.com/#en",
+  docsUrl: "https://doc.bafc.io/#en",
   bfcMainSite: "https://www.bayareafoundersclub.com",
   contactEmail: "gateway@bayareafoundersclub.com",
   stats: [
