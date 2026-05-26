@@ -44,7 +44,7 @@ export default function Navbar() {
             |
           </span>
           <span className="hidden sm:block text-[#aaa] text-xs font-semibold tracking-widest uppercase">
-            Smart AI Gateway
+            BFC AI Gateway
           </span>
         </a>
 
