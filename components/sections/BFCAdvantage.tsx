@@ -11,7 +11,7 @@ const advantages = [
     generic: "No community layer",
   },
   {
-    bfc: "Curated model rec­om­men­da­tions from operators",
+    bfc: "Curated model recommendations from operators",
     generic: "DIY model selection",
   },
   {
@@ -120,7 +120,7 @@ export default function BFCAdvantage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="text-sm text-[#1a1a1a] min-w-0 wrap-break-word">{row.bfc}</span>
+                  <span className="text-sm text-[#1a1a1a] min-w-0 wrap-break-word hyphens-auto">{row.bfc}</span>
                 </div>
                 <div className="px-3 sm:px-6 py-3 sm:py-4 flex items-start gap-2 sm:gap-3 min-w-0">
                   <svg
