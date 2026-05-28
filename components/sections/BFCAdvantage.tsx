@@ -76,19 +76,19 @@ export default function BFCAdvantage() {
           <div className="rounded-2xl border border-[#e8e2d9] overflow-hidden shadow-sm">
             {/* Table header */}
             <div className="grid grid-cols-2 bg-[#f2ede7]">
-              <div className="px-6 py-4 flex items-center gap-3 border-r border-[#e8e2d9]">
+              <div className="px-3 sm:px-6 py-3 sm:py-4 flex flex-row flex-wrap items-center gap-x-3 gap-y-1 border-r border-[#e8e2d9]">
                 <Image
                   src="/bfc_logo_c.png"
                   alt="BFC AI Gateway"
                   width={100}
                   height={26}
-                  className="h-5 w-auto"
+                  className="h-5 w-auto shrink-0"
                 />
                 <span className="text-xs font-semibold text-[#c9922a] tracking-wide uppercase">
                   AI Gateway
                 </span>
               </div>
-              <div className="px-6 py-4 flex items-center">
+              <div className="px-3 sm:px-6 py-3 sm:py-4 flex items-center">
                 <span className="text-xs font-semibold text-[#aaa] tracking-wide uppercase">
                   Generic API Aggregators
                 </span>
@@ -103,7 +103,7 @@ export default function BFCAdvantage() {
                   i % 2 === 0 ? "bg-white" : "bg-[#faf8f5]"
                 }`}
               >
-                <div className="px-6 py-4 flex items-start gap-3 border-r border-[#f0ebe3]">
+                <div className="px-3 sm:px-6 py-3 sm:py-4 flex items-start gap-2 sm:gap-3 border-r border-[#f0ebe3] min-w-0">
                   <svg
                     className="shrink-0 mt-0.5"
                     width="16"
@@ -120,9 +120,9 @@ export default function BFCAdvantage() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                  <span className="text-sm text-[#1a1a1a]">{row.bfc}</span>
+                  <span className="text-sm text-[#1a1a1a] min-w-0 wrap-break-word hyphens-auto">{row.bfc}</span>
                 </div>
-                <div className="px-6 py-4 flex items-start gap-3">
+                <div className="px-3 sm:px-6 py-3 sm:py-4 flex items-start gap-2 sm:gap-3 min-w-0">
                   <svg
                     className="shrink-0 mt-0.5"
                     width="16"
@@ -138,7 +138,7 @@ export default function BFCAdvantage() {
                       strokeLinecap="round"
                     />
                   </svg>
-                  <span className="text-sm text-[#aaa]">{row.generic}</span>
+                  <span className="text-sm text-[#aaa] min-w-0 wrap-break-word">{row.generic}</span>
                 </div>
               </div>
             ))}
