@@ -14,7 +14,7 @@ const miniFeatures = [
         <path d="M9 6h4a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2H5a2 2 0 0 0-2 2v0a2 2 0 0 0 2 2h1" stroke="#c9922a" strokeWidth="1.3" strokeLinecap="round" />
       </svg>
     ),
-    title: "90+ Frontier Models",
+    title: "100+ Frontier Models",
     sub: "All in one place",
   },
   {
@@ -78,7 +78,7 @@ export default function Hero() {
                 transition={{ duration: 0.55, delay: 0.5 }}
                 className="text-base text-[#666] max-w-md leading-relaxed mb-8"
               >
-                BFC AI Gateway gives you unified access to 90+ frontier AI models —
+                BFC AI Gateway gives you unified access to 100+ frontier AI models —
                 at startup-friendly rates, backed by the network only BFC can offer.
               </motion.p>
 

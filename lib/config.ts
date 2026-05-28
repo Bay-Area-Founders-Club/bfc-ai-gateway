@@ -5,7 +5,7 @@ export const config = {
   bfcMainSite: "https://www.bayareafoundersclub.com",
   contactEmail: "contact@bayareafoundersclub.com",
   stats: [
-    { value: "90+", label: "AI Models" },
+    { value: "100+", label: "AI Models" },
     { value: "40%", label: "Cost Reduction" },
     { value: "99.9%", label: "Uptime SLA" },
     { value: "5,000+", label: "Enterprises" },
