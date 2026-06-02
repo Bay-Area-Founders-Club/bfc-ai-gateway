@@ -67,7 +67,7 @@ export default function Hero() {
                   transition={{ duration: 0.55, delay: 0.38, ease: [0.21, 0.47, 0.32, 0.98] }}
                   className="text-5xl sm:text-6xl font-bold tracking-tight leading-tight text-[#c9922a]"
                 >
-                  Smart OpenRouter
+                  Smart Routing
                 </motion.h1>
               </div>
 
