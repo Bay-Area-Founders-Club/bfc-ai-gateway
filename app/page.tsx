@@ -5,6 +5,7 @@ import Stats from "@/components/sections/Stats";
 import Features from "@/components/sections/Features";
 import ModelGrid from "@/components/sections/ModelGrid";
 import BFCAdvantage from "@/components/sections/BFCAdvantage";
+import ContactSection from "@/components/sections/ContactSection";
 import CallToAction from "@/components/sections/CallToAction";
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Features />
         <ModelGrid />
         <BFCAdvantage />
+        <ContactSection />
         <CallToAction />
       </main>
       <Footer />

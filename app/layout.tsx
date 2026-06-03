@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
 
 const inter = Inter({
@@ -37,7 +38,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} h-full`}>
-      <body className="min-h-full bg-[#f9f7f4]">{children}</body>
+      <body className="min-h-full bg-[#f9f7f4]">
+        {children}
+        <Toaster position="top-right" />
+      </body>
     </html>
   );
 }
