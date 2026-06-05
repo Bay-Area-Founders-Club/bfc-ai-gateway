@@ -9,34 +9,17 @@ export default function ContactSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) {
       toast.error("Please fill in all fields.");
       return;
     }
 
-    setIsLoading(true);
-    try {
-      const res = await fetch("/api/contact/send-message", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, message }),
-      });
-
-      if (!res.ok) throw new Error();
-
-      toast.success("Your message has been sent!");
-      setName("");
-      setEmail("");
-      setMessage("");
-    } catch {
-      toast.error("Failed to send message. Please try again.");
-    } finally {
-      setIsLoading(false);
-    }
+    const subject = encodeURIComponent(`BFC AI Gateway inquiry from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:${config.contactEmail}?subject=${subject}&body=${body}`;
   };
 
   const socialLinks = [
@@ -155,10 +138,9 @@ export default function ContactSection() {
                 />
                 <button
                   type="submit"
-                  disabled={isLoading}
-                  className="w-full bg-[#c9922a] hover:bg-[#e8b84b] disabled:opacity-60 disabled:cursor-not-allowed text-black font-semibold rounded-lg px-7 py-3.5 text-sm tracking-wide shadow-lg hover:shadow-[0_0_24px_rgba(201,146,42,0.4)] transition-all duration-200"
+                  className="w-full bg-[#c9922a] hover:bg-[#e8b84b] text-black font-semibold rounded-lg px-7 py-3.5 text-sm tracking-wide shadow-lg hover:shadow-[0_0_24px_rgba(201,146,42,0.4)] transition-all duration-200"
                 >
-                  {isLoading ? "Submitting..." : "Submit"}
+                  Submit
                 </button>
               </form>
             </div>
