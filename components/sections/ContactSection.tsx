@@ -10,7 +10,6 @@ export default function ContactSection() {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -27,17 +26,12 @@ export default function ContactSection() {
         body: JSON.stringify({ name, email, message }),
       });
       if (!res.ok) throw new Error();
-      setSubmitted(true);
       toast.success("Message sent! We'll get back to you soon.");
       setName("");
       setEmail("");
       setMessage("");
     } catch {
-      // Fallback: open mailto
-      const subject = encodeURIComponent(`BFC AI Gateway inquiry from ${name}`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-      window.open(`mailto:${config.contactEmail}?subject=${subject}&body=${body}`);
-      toast.success("Opening your email client...");
+      toast.error("Failed to send message. Please email us directly at " + config.contactEmail);
     } finally {
       setIsLoading(false);
     }
