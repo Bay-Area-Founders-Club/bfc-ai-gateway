@@ -4,6 +4,7 @@ import Hero from "@/components/sections/Hero";
 import Stats from "@/components/sections/Stats";
 import Features from "@/components/sections/Features";
 import ModelGrid from "@/components/sections/ModelGrid";
+import PriceAdvantage from "@/components/sections/PriceAdvantage";
 import BFCAdvantage from "@/components/sections/BFCAdvantage";
 import ContactSection from "@/components/sections/ContactSection";
 import CallToAction from "@/components/sections/CallToAction";
@@ -15,10 +16,11 @@ export default function Home() {
         <Hero />
         <Stats />
         <Features />
+        <PriceAdvantage />
         <ModelGrid />
         <BFCAdvantage />
-        <ContactSection />
         <CallToAction />
+        <ContactSection />
       </main>
       <Footer />
     </div>
