@@ -9,17 +9,38 @@ export default function ContactSection() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !message) {
       toast.error("Please fill in all fields.");
       return;
     }
 
-    const subject = encodeURIComponent(`BFC AI Gateway inquiry from ${name}`);
-    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:${config.contactEmail}?subject=${subject}&body=${body}`;
+    setIsLoading(true);
+    try {
+      const res = await fetch("/api/contact/send-message", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, message }),
+      });
+      if (!res.ok) throw new Error();
+      setSubmitted(true);
+      toast.success("Message sent! We'll get back to you soon.");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      // Fallback: open mailto
+      const subject = encodeURIComponent(`BFC AI Gateway inquiry from ${name}`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+      window.open(`mailto:${config.contactEmail}?subject=${subject}&body=${body}`);
+      toast.success("Opening your email client...");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   const socialLinks = [
@@ -138,9 +159,10 @@ export default function ContactSection() {
                 />
                 <button
                   type="submit"
-                  className="w-full bg-[#c9922a] hover:bg-[#e8b84b] text-black font-semibold rounded-lg px-7 py-3.5 text-sm tracking-wide shadow-lg hover:shadow-[0_0_24px_rgba(201,146,42,0.4)] transition-all duration-200"
+                  disabled={isLoading}
+                  className="w-full bg-[#c9922a] hover:bg-[#e8b84b] disabled:opacity-60 disabled:cursor-not-allowed text-black font-semibold rounded-lg px-7 py-3.5 text-sm tracking-wide shadow-lg hover:shadow-[0_0_24px_rgba(201,146,42,0.4)] transition-all duration-200"
                 >
-                  Submit
+                  {isLoading ? "Sending..." : "Submit"}
                 </button>
               </form>
             </div>
