@@ -8,6 +8,7 @@ import PriceAdvantage from "@/components/sections/PriceAdvantage";
 import BFCAdvantage from "@/components/sections/BFCAdvantage";
 import ContactSection from "@/components/sections/ContactSection";
 import CallToAction from "@/components/sections/CallToAction";
+import WhyBFC from "@/components/sections/WhyBFC";
 export default function Home() {
   return (
     <div className="bg-[#f9f7f4] min-h-screen">
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Stats />
         <Features />
+        <WhyBFC />
         <PriceAdvantage />
         <ModelGrid />
         <BFCAdvantage />

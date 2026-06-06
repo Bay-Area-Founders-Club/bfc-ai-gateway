@@ -25,15 +25,13 @@ export default function ContactSection() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
       });
-
       if (!res.ok) throw new Error();
-
-      toast.success("Your message has been sent!");
+      toast.success("Message sent! We'll get back to you soon.");
       setName("");
       setEmail("");
       setMessage("");
     } catch {
-      toast.error("Failed to send message. Please try again.");
+      toast.error("Failed to send message. Please email us directly at " + config.contactEmail);
     } finally {
       setIsLoading(false);
     }
@@ -158,7 +156,7 @@ export default function ContactSection() {
                   disabled={isLoading}
                   className="w-full bg-[#c9922a] hover:bg-[#e8b84b] disabled:opacity-60 disabled:cursor-not-allowed text-black font-semibold rounded-lg px-7 py-3.5 text-sm tracking-wide shadow-lg hover:shadow-[0_0_24px_rgba(201,146,42,0.4)] transition-all duration-200"
                 >
-                  {isLoading ? "Submitting..." : "Submit"}
+                  {isLoading ? "Sending..." : "Submit"}
                 </button>
               </form>
             </div>
